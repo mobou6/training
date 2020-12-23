@@ -390,3 +390,62 @@ yum install -y git
 dnf update
 su - root
 exit
+sudo dnf update 
+sudo dnf install git
+ll
+cd plays/
+ll
+cd ..
+git init 
+git status
+git remote add https://github.com/mobou6/training
+git remote add master https://github.com/mobou6/training
+git status
+git add .
+git commit -m "initial commit for the repository"
+git config --local user.email mohieddine.boussetta@gmail.com
+git config --local user.name "Mohieddine BOUSSETTA"
+git commit -m "initial commit for the repository"
+git push
+git push master
+git push --set-upstream master master
+git checkout main
+git branch -a
+git fetch
+git branch -a
+git checkout main
+git status
+git rebase master
+git status
+git diff
+git pull
+ git config pull.rebase true
+git pull
+git status
+git push
+git checkout master
+git status
+git fetch
+git pull
+git status
+git rebase main
+git status
+git pull
+git status
+git push
+git log
+git status
+git fetch
+git pull
+ll
+ls -al 
+ls .*
+
+vi .gitignore
+git status
+vi .gitignore 
+git status
+vi .gitignore
+git add .gitignore 
+git status
+exit
