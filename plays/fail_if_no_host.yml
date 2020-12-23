@@ -1,0 +1,13 @@
+- name : Play that will fail the playbook if target_machines list hosts is not in the inventory
+  hosts: "{{ target_machines }},localhost" #you need to have the localhost machine on the inventory to be able to execute tasks
+  gather_facts: false
+
+  tasks:
+  - name: "Fail if {{ target_machines }} is/are not in the inventory"
+    assert:
+      that: 
+        - (target_machines.split(',')|list)|intersect(ansible_play_hosts) != []
+      fail_msg: "{{ target_machines.split(',')|list |difference(ansible_play_hosts) | join(' ') }} is/are not found on the inventory"
+      success_msg: "{{ target_machines.split(',')|list|intersect(ansible_play_hosts) | join(' ') }} is/are in the inventory"
+    delegate_to: localhost
+    run_once: true

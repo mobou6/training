@@ -1,0 +1,14 @@
+[nodes]
+node1.lab.com ansible_host=10.0.0.14
+node2.lab.com ansible_host=10.0.0.23
+node3.lab.com ansible_host=10.0.0.24
+node4.lab.com ansible_host=10.0.0.25
+
+[proxy]
+node1.lab.com
+
+[webservers]
+node2.lab.com
+
+[database]
+node3.lab.com
